@@ -7,7 +7,6 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 function Router() {
   return (
@@ -32,9 +31,8 @@ function App() {
           <main>
             <Router />
           </main>
-          <footer>
-            <Footer />
-          </footer>
+           
+           
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

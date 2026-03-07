@@ -10,7 +10,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-[oklch(0.12_0.05_245)] py-10">
+    <footer className="bg-transparent py-10">
       <div className="max-w-7xl mx-auto px-6">
         {/* Legal Disclaimer only */}
         <div className="border-t border-white/10 pt-8">
