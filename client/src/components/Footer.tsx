@@ -17,9 +17,6 @@ export default function Footer() {
           <p className="font-body text-white/30 text-xs leading-relaxed mb-4">
             {t('footer.disclaimer')}
           </p>
-          <p className="font-body text-white/25 text-xs">
-            © {currentYear} CLOUDVIEW.
-          </p>
         </div>
       </div>
     </footer>

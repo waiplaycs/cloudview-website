@@ -5,6 +5,9 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import { Helmet } from "react-helmet-async";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 function Router() {
   return (
@@ -21,8 +24,17 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
+          <Helmet titleTemplate="%s | 雲向 CLOUDVIEW" defaultTitle="雲向 CLOUDVIEW | 北都優越地段 盛綠園林會所" />
           <Toaster />
-          <Router />
+          <header>
+            <Navbar />
+          </header>
+          <main>
+            <Router />
+          </main>
+          <footer>
+            <Footer />
+          </footer>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
