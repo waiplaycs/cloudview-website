@@ -17,7 +17,7 @@ export default function Navbar() {
     { label: t("nav.home"), href: "#home" },
     { label: t("nav.highlights"), href: "#highlights" },
     { label: t("nav.landscape"), href: "#enzo-enea" },
-    { label: t("nav.transport"), href: "#amenities" },
+    { label: t("nav.transport"), href: "#transport" },
     { label: t("nav.innovation"), href: "#location" },
     { label: t("nav.sales"), href: "#sales" },
     { label: t("nav.contact"), href: "#contact" },
