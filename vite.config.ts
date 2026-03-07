@@ -150,37 +150,7 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginContactAPI()];
-
-// =============================================================================
-// Contact API — Vite Dev Plugin
-// Proxies POST /api/contact to sendContactNotification in dev mode
-// =============================================================================
-function vitePluginContactAPI(): Plugin {
-  return {
-    name: "contact-api",
-    configureServer(server: ViteDevServer) {
-      server.middlewares.use("/api/contact", async (req, res, next) => {
-        if (req.method !== "POST") return next();
-
-        let body = "";
-        req.on("data", (chunk) => { body += chunk.toString(); });
-        req.on("end", async () => {
-          try {
-            const { sendContactNotification } = await import("./server/contact.js");
-            const payload = JSON.parse(body);
-            const result = await sendContactNotification(payload);
-            res.writeHead(200, { "Content-Type": "application/json" });
-            res.end(JSON.stringify(result));
-          } catch (e) {
-            res.writeHead(500, { "Content-Type": "application/json" });
-            res.end(JSON.stringify({ ok: false, error: String(e) }));
-          }
-        });
-      });
-    },
-  };
-}
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
   plugins,

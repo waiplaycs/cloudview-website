@@ -5,11 +5,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663390670563/Ze3u637JsALmM5sdedd6MJ/cloudview_hero-knk3x8KoJbCBEju3oUt9HR.webp";
 
 export default function ContactSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -43,19 +45,25 @@ export default function ContactSection() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setSubmitted(true);
-      } else {
-        setError(data?.error ?? "提交失敗，請稍後再試。");
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("缺少 EmailJS 設定，請管理員檢查 .env");
       }
-    } catch {
-      setError("網絡錯誤，請檢查連線後重試。");
+
+      await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current!,
+        publicKey
+      );
+
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error(err);
+      setError(err?.text || err?.message || "提交失敗，請檢查連線後重試。");
     } finally {
       setLoading(false);
     }
@@ -118,7 +126,7 @@ export default function ContactSection() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
                   <div className="mb-6">
                     <h3 className="font-display text-white text-xl font-light tracking-wide">
                       優先登記查詢

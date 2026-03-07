@@ -3,7 +3,6 @@ import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
 import { readFileSync } from "fs";
-import { sendContactNotification, type ContactPayload } from "./contact.js";
 
 // Load .env file manually (no dotenv dependency needed)
 try {
@@ -30,17 +29,6 @@ async function startServer() {
   const server = createServer(app);
 
   app.use(express.json());
-
-  // ── Contact form API ─────────────────────────────────────
-  app.post("/api/contact", async (req, res) => {
-    const payload = req.body as ContactPayload;
-    if (!payload?.name || !payload?.phone) {
-      res.status(400).json({ ok: false, error: "姓名及電話為必填項目" });
-      return;
-    }
-    const result = await sendContactNotification(payload);
-    res.json(result);
-  });
 
   // Serve static files from dist/public in production
   const staticPath =
