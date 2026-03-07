@@ -118,14 +118,6 @@ export default function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <button
-              onClick={() => handleNavClick("#contact")}
-              className={`font-body text-sm tracking-widest transition-colors duration-300 hover:text-[oklch(0.72_0.12_220)] ${
-                scrolled ? "text-[oklch(0.25_0.08_240)]" : "text-white/90"
-              }`}
-            >
-              {t("nav.get_info")}
-            </button>
             <a
               href="https://www.instagram.com/wingtai_living/?locale=zh_hk"
               target="_blank"
@@ -137,6 +129,14 @@ export default function Navbar() {
             >
               <Instagram size={20} />
             </a>
+            <button
+              onClick={() => handleNavClick("#contact")}
+              className={`font-body text-sm tracking-widest transition-colors duration-300 hover:text-[oklch(0.72_0.12_220)] ${
+                scrolled ? "text-[oklch(0.25_0.08_240)]" : "text-white/90"
+              }`}
+            >
+              {t("nav.get_info")}
+            </button>
             <button
               onClick={() => window.open(`https://wa.me/85212345678?text=${t('cta.whatsapp_msg')}`, '_blank')}
               className="btn-primary text-sm tracking-widest flex items-center gap-2"
