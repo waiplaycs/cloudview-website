@@ -230,7 +230,7 @@ const sharedKeysEn = {
     transport: { title: "Convenient Transport", desc: "About 8 mins walk to Sheung Shui Station, 1 stop to Lo Wu/Lok Ma Chau. Connects seamlessly to dual-city living." },
     golf: { title: "Rare 180° Golf View", desc: "South/Southwest facing units enjoy an unobstructed 180° view of Fanling Golf Course (170 hectares)." },
     layout: { title: "High Practical Rate", desc: "Approx. 86% practical rate with no wasted corridors. Extra high ceilings of 3.25-3.55m, offering spacious living." },
-    clubhouse: { title: "Resort-style Clubhouse", desc: "A 28,000 sq.ft. clubhouse "Cloud Retreat" with landscaped gardens, 50m pool, and Oasis Fitness to satisfy all ages." },
+    clubhouse: { title: "Resort-style Clubhouse", desc: "A 28,000 sq.ft. clubhouse \"Cloud Retreat\" with landscaped gardens, 50m pool, and Oasis Fitness to satisfy all ages." },
     lifestyle: { title: "Mature Amenities", desc: "Walking distance to Landmark North, Metropolis Plaza, and Choi Yuen Plaza. Close to North District Hospital and clinics." },
     education: { title: "Quality Education", desc: "Located in Primary School Net 80 and North District Secondary School Net, surrounded by renowned schools and near CUHK." },
     investment: { title: "Investment Value", desc: "Starting from HK$2.9 million (Studio), offering outstanding value for money and optimistic rental yield." },
@@ -244,8 +244,8 @@ const sharedKeysEn = {
   architecture: {
     title: "Renowned Landscape Architect",
     desc1: "With his unique design philosophy and profound understanding of the natural environment, he has created stunning landscape spaces for top international projects.",
-    desc2: "At CLOUDVIEW, Enzo Enea perfectly integrates natural ecology with modern living to create the "Cloud Retreat" resort clubhouse.",
-    desc3: "The project includes five themed gardens, an approx. 50-metre landscaped pool, and a children"s treehouse, offering a tranquil green lifestyle in the city."
+    desc2: "At CLOUDVIEW, Enzo Enea perfectly integrates natural ecology with modern living to create the 'Cloud Retreat' resort clubhouse.",
+    desc3: "The project includes five themed gardens, an approx. 50-metre landscaped pool, and a children's treehouse, offering a tranquil green lifestyle in the city."
   },
   location: {
     zoom_hint: "Click to enlarge",
@@ -261,7 +261,7 @@ const sharedKeysEn = {
       land: "210 hectares Tech Land", uni: "90 hectares University Town", year: "Progressive Supply from 2026"
     },
     park2_title: "San Tin Technopole · University Town",
-    park2_desc: "Expected to provide approx. <strong>210 hectares</strong> of I&T land, synergizing with Shenzhen"s tech parks. <strong>90 hectares</strong> reserved for a University Town.",
+    park2_desc: "Expected to provide approx. <strong>210 hectares</strong> of I&T land, synergizing with Shenzhen's tech parks. <strong>90 hectares</strong> reserved for a University Town.",
     disclaimer: "* Map is for reference only. Details are subject to government announcements."
   },
   amenities: {
@@ -284,7 +284,7 @@ const sharedKeysEn = {
     disclaimer: "* Route map is for reference only. Details are subject to MTR Corporation announcements."
   },
   sales: {
-    title: "Sales Information", subtitle: "Learn more about CLOUDVIEW"s unit layouts, pricing, and sales arrangements.",
+    title: "Sales Information", subtitle: "Learn more about CLOUDVIEW's unit layouts, pricing, and sales arrangements.",
     table: { title: "Unit Types", type: "Type", area: "Saleable Area (sq.ft)", percentage: "Percentage", count: "Quantity" },
     units: {
       studio: { type: "Studio", count: "Approx. 92 Units" },
@@ -314,7 +314,7 @@ const sharedKeysEn = {
     message: "Message / Inquiry (Optional)", message_ph: "e.g., Learn about payment plans, arrange weekend visit...", submitting: "Submitting...", submit: "Submit Now", privacy: "I agree to receive the latest news and offers from Tai Hung Fai Group",
   },
   footer: {
-    disclaimer: "Important Disclaimer: The images and information contained in this website are for reference only and do not constitute any offer or commitment. All sales details are subject to the Residential Properties (First-hand Sales) Ordinance and the sales brochure announced by the vendor. The project simulated images are artist"s impressions and are not drawn to scale. Prospective purchasers are advised to refer to the sales brochure for details. All information is subject to the final approval of relevant government departments."
+    disclaimer: "Important Disclaimer: The images and information contained in this website are for reference only and do not constitute any offer or commitment. All sales details are subject to the Residential Properties (First-hand Sales) Ordinance and the sales brochure announced by the vendor. The project simulated images are artist's impressions and are not drawn to scale. Prospective purchasers are advised to refer to the sales brochure for details. All information is subject to the final approval of relevant government departments."
   },
   cta: { whatsapp_msg: "Hello, I am interested in the CLOUDVIEW project and would like to know more.", whatsapp: "WhatsApp Inquiry", aria: "Inquiry" }
 };
