@@ -1,30 +1,33 @@
+/*
+ * 雲向 CLOUDVIEW — 售樓資訊區域
+ * 風格: 深海藍背景，白色文字，表格展示戶型資訊
+ */
+
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { FileText, DollarSign, Calendar, Info, Newspaper, Play } from "lucide-react";
 
+const unitTypes = [
+  { type: "開放式", area: "196 - 220", percentage: "12%", count: "約92伙" },
+  { type: "一房", area: "292 - 445", percentage: "58%", count: "約444伙" },
+  { type: "兩房", area: "445 - 620", percentage: "30%", count: "約230伙" },
+  { type: "三房", area: "620 - 868", percentage: "特色戶", count: "部分樓層" },
+];
+
+const salesDocs = [
+  { icon: FileText, title: "售樓說明書", desc: "包含項目詳細資料及條款", action: "下載文件", href: "https://www.cloudview.hk/api/uploads/20260216%20Cloudview%20Sales%20Brochure.pdf" },
+  { icon: DollarSign, title: "價單", desc: "最新單位定價及付款辦法", action: "查閱價單", href: "https://www.cloudview.hk/api/uploads/CLOUDVIEW_PL1.pdf" },
+  { icon: Newspaper, title: "宣傳單張", desc: "項目宣傳資料", action: "下載單張", href: "https://www.cloudview.hk/CLOUDVIEW_Leaflet_250x375mmH_260127-RGB-2page-200dpi.pdf" },
+  { icon: Calendar, title: "銷售安排", desc: "容後公布", action: null, href: null },
+  { icon: Info, title: "示範單位", desc: "九龍觀塘巧明街100號\n安盛金融大樓18樓", action: "預約參觀", href: null },
+];
+
 export default function SalesSection() {
-  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [floorplanOpen, setFloorplanOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [galleryTab, setGalleryTab] = useState<'1BR' | '2BR'>('1BR');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-
-  const unitTypes = [
-    { type: t('sales.units.studio.type'), area: "196 - 220", percentage: "12%", count: t('sales.units.studio.count') },
-    { type: t('sales.units.1br.type'), area: "292 - 445", percentage: "58%", count: t('sales.units.1br.count') },
-    { type: t('sales.units.2br.type'), area: "445 - 620", percentage: "30%", count: t('sales.units.2br.count') },
-    { type: t('sales.units.3br.type'), area: "620 - 868", percentage: t('sales.units.3br.percentage'), count: t('sales.units.3br.count') },
-  ];
-
-  const salesDocs = [
-    { icon: FileText, title: t('sales.docs.brochure.title'), desc: t('sales.docs.brochure.desc'), action: t('sales.docs.brochure.action'), href: "https://www.cloudview.hk/api/uploads/20260216%20Cloudview%20Sales%20Brochure.pdf" },
-    { icon: DollarSign, title: t('sales.docs.price.title'), desc: t('sales.docs.price.desc'), action: t('sales.docs.price.action'), href: "https://www.cloudview.hk/api/uploads/CLOUDVIEW_PL1.pdf" },
-    { icon: Newspaper, title: t('sales.docs.leaflet.title'), desc: t('sales.docs.leaflet.desc'), action: t('sales.docs.leaflet.action'), href: "https://www.cloudview.hk/CLOUDVIEW_Leaflet_250x375mmH_260127-RGB-2page-200dpi.pdf" },
-    { icon: Calendar, title: t('sales.docs.schedule.title'), desc: t('sales.docs.schedule.desc'), action: null, href: null },
-    { icon: Info, title: t('sales.docs.showflat.title'), desc: t('sales.docs.showflat.desc'), action: t('sales.docs.showflat.action'), href: null },
-  ];
 
   const GALLERY_1BR = [
     '/101.jpg',
@@ -63,6 +66,7 @@ export default function SalesSection() {
   return (
     <section id="sales" ref={sectionRef} className="bg-ocean-gradient py-24">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
         <div className="reveal mb-16">
           <div className="flex items-center gap-4 mb-4">
             <div className="gold-line" />
@@ -71,26 +75,27 @@ export default function SalesSection() {
             </span>
           </div>
           <h2 className="font-display text-white text-4xl md:text-5xl font-light tracking-wide">
-            {t('sales.title')}
+            售樓資訊
           </h2>
           <p className="font-body text-white/60 text-base mt-4 max-w-xl leading-relaxed">
-            {t('sales.subtitle')}
+            了解雲向的戶型配置、定價及銷售安排，把握入市良機。
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Unit Types Table & Flat Gallery */}
           <div className="reveal">
             <h3 className="font-display text-white text-2xl font-light tracking-wide mb-6">
-              {t('sales.table.title')}
+              戶型配置
             </h3>
             <div className="overflow-hidden" style={{ borderRadius: "4px" }}>
               <table className="w-full">
                 <thead>
                   <tr className="bg-[oklch(0.45_0.15_225)]">
-                    <th className="font-body text-white text-xs tracking-[0.2em] text-left px-5 py-4">{t('sales.table.type')}</th>
-                    <th className="font-body text-white text-xs tracking-[0.2em] text-left px-5 py-4">{t('sales.table.area')}</th>
-                    <th className="font-body text-white text-xs tracking-[0.2em] text-left px-5 py-4">{t('sales.table.percentage')}</th>
-                    <th className="font-body text-white text-xs tracking-[0.2em] text-left px-5 py-4">{t('sales.table.count')}</th>
+                    <th className="font-body text-white text-xs tracking-[0.2em] text-left px-5 py-4">戶型</th>
+                    <th className="font-body text-white text-xs tracking-[0.2em] text-left px-5 py-4">實用面積 (呎)</th>
+                    <th className="font-body text-white text-xs tracking-[0.2em] text-left px-5 py-4">佔比</th>
+                    <th className="font-body text-white text-xs tracking-[0.2em] text-left px-5 py-4">數量</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -109,16 +114,17 @@ export default function SalesSection() {
                   ))}
                 </tbody>
               </table>
+              {/* Flat Gallery */}
               <div className="mt-8">
                 <div className="flex gap-2 mb-4">
                   <button
                     className={`px-4 py-2 rounded-full font-body text-sm tracking-wider transition-colors duration-200 ${galleryTab === '1BR' ? 'bg-[oklch(0.72_0.12_220)] text-white' : 'bg-white/10 text-white/60'}`}
                     onClick={() => setGalleryTab('1BR')}
-                  >{t('sales.tabs.1br')}</button>
+                  >1房</button>
                   <button
                     className={`px-4 py-2 rounded-full font-body text-sm tracking-wider transition-colors duration-200 ${galleryTab === '2BR' ? 'bg-[oklch(0.72_0.12_220)] text-white' : 'bg-white/10 text-white/60'}`}
                     onClick={() => setGalleryTab('2BR')}
-                  >{t('sales.tabs.2br')}</button>
+                  >2房</button>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   {galleryImages.map((src, idx) => (
@@ -127,17 +133,18 @@ export default function SalesSection() {
                       className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5 cursor-zoom-in"
                       onClick={() => { setLightboxIndex(idx); setLightboxOpen(true); }}
                     >
-                      <img src={src} alt={`${t('sales.gallery.alt_prefix')} ${galleryTab} ${idx+1}`} className="w-full h-32 object-cover group-hover:opacity-80 transition-opacity" />
+                      <img src={src} alt={`示範單位${galleryTab} ${idx+1}`} className="w-full h-32 object-cover group-hover:opacity-80 transition-opacity" />
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
-                        <span className="bg-black/60 text-white text-xs font-body px-2 py-1 rounded">{t('sales.gallery.zoom_hint')}</span>
+                        <span className="bg-black/60 text-white text-xs font-body px-2 py-1 rounded">點擊放大</span>
                       </div>
                     </button>
                   ))}
                 </div>
-                <p className="font-body text-white/40 text-xs mt-2 tracking-wider">{t('sales.gallery.title')}</p>
+                <p className="font-body text-white/40 text-xs mt-2 tracking-wider">示範單位照片</p>
               </div>
             </div>
 
+            {/* Floorplan thumbnail */}
             <div className="mt-6">
               <button
                 onClick={() => setFloorplanOpen(true)}
@@ -146,16 +153,17 @@ export default function SalesSection() {
               >
                 <img
                   src="/floorplan.jpg"
-                  alt={t('sales.floorplan.alt')}
+                  alt="戶型平面圖"
                   className="w-full object-contain max-h-48 bg-white/5"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
-                  <span className="bg-black/60 text-white text-xs font-body px-3 py-1.5 rounded-full tracking-wider">{t('sales.floorplan.zoom_hint')}</span>
+                  <span className="bg-black/60 text-white text-xs font-body px-3 py-1.5 rounded-full tracking-wider">點擊放大平面圖</span>
                 </div>
               </button>
-              <p className="font-body text-white/40 text-xs mt-2 tracking-wider">{t('sales.floorplan.title')}</p>
+              <p className="font-body text-white/40 text-xs mt-2 tracking-wider">標準層平面圖</p>
             </div>
 
+            {/* Video — sits below floorplan in left column */}
             <div className="mt-6">
               <button
                 onClick={() => setVideoOpen(true)}
@@ -173,15 +181,16 @@ export default function SalesSection() {
                   <div className="w-14 h-14 rounded-full bg-white/20 border-2 border-white/60 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
                     <Play size={22} className="text-white ml-1" fill="white" />
                   </div>
-                  <span className="font-body text-white text-sm tracking-wider">{t('sales.video.title')}</span>
+                  <span className="font-body text-white text-sm tracking-wider">觀看宣傳影片</span>
                 </div>
               </button>
             </div>
           </div>
 
+          {/* Sales Documents — cards only on right */}
           <div className="reveal" style={{ transitionDelay: "0.2s" }}>
             <h3 className="font-display text-white text-2xl font-light tracking-wide mb-6">
-              {t('sales.docs.title')}
+              銷售文件
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {salesDocs.map((doc) => {
@@ -201,7 +210,9 @@ export default function SalesSection() {
                       }
                     }}
                   >
-                    <div className="w-10 h-10 bg-[oklch(0.45_0.15_225/0.5)] flex items-center justify-center mb-3 group-hover:bg-[oklch(0.45_0.15_225)] transition-colors duration-300" style={{ borderRadius: "2px" }}>
+                    <div className="w-10 h-10 bg-[oklch(0.45_0.15_225/0.5)] flex items-center justify-center mb-3 group-hover:bg-[oklch(0.45_0.15_225)] transition-colors duration-300"
+                      style={{ borderRadius: "2px" }}
+                    >
                       <Icon size={18} className="text-white" />
                     </div>
                     <h4 className="font-display text-white text-base font-medium mb-1">{doc.title}</h4>
@@ -218,6 +229,7 @@ export default function SalesSection() {
           </div>
         </div>
 
+        {/* Page Number */}
         <div className="reveal mt-12 flex justify-end">
           <div className="flex items-center gap-4 opacity-40">
             <span className="font-number text-white text-sm tracking-widest leading-none">06</span>
@@ -226,33 +238,85 @@ export default function SalesSection() {
         </div>
       </div>
 
+      {/* Floorplan Lightbox */}
+      {/* Flat Gallery Lightbox */}
       {lightboxOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" onClick={() => setLightboxOpen(false)}>
-          <div className="relative max-w-4xl w-[90vw] max-h-[88vh] bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col items-center" onClick={e => e.stopPropagation()}>
-            <img src={galleryImages[lightboxIndex]} alt={`${t('sales.gallery.alt_prefix')} ${galleryTab} ${lightboxIndex+1}`} className="w-full h-full object-contain" />
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <div
+            className="relative max-w-4xl w-[90vw] max-h-[88vh] bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col items-center"
+            onClick={e => e.stopPropagation()}
+          >
+            <img
+              src={galleryImages[lightboxIndex]}
+              alt={`示範單位${galleryTab} ${lightboxIndex+1}`}
+              className="w-full h-full object-contain"
+            />
             <div className="flex gap-2 mt-4 mb-2">
-              <button className="px-3 py-1 rounded bg-black/20 text-white text-xs" disabled={lightboxIndex === 0} onClick={() => setLightboxIndex(i => Math.max(0, i-1))}>{t('sales.gallery.prev')}</button>
-              <button className="px-3 py-1 rounded bg-black/20 text-white text-xs" disabled={lightboxIndex === galleryImages.length-1} onClick={() => setLightboxIndex(i => Math.min(galleryImages.length-1, i+1))}>{t('sales.gallery.next')}</button>
+              <button
+                className="px-3 py-1 rounded bg-black/20 text-white text-xs"
+                disabled={lightboxIndex === 0}
+                onClick={() => setLightboxIndex(i => Math.max(0, i-1))}
+              >上一張</button>
+              <button
+                className="px-3 py-1 rounded bg-black/20 text-white text-xs"
+                disabled={lightboxIndex === galleryImages.length-1}
+                onClick={() => setLightboxIndex(i => Math.min(galleryImages.length-1, i+1))}
+              >下一張</button>
             </div>
           </div>
-          <button onClick={() => setLightboxOpen(false)} className="absolute top-6 right-8 text-white/70 hover:text-white text-4xl leading-none z-10">×</button>
+          <button
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-6 right-8 text-white/70 hover:text-white text-4xl leading-none z-10"
+          >×</button>
         </div>
       )}
       {floorplanOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" onClick={() => setFloorplanOpen(false)}>
-          <div className="relative max-w-5xl w-[92vw] max-h-[88vh] bg-white rounded-2xl overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <img src="/floorplan.jpg" alt={t('sales.floorplan.alt')} className="w-full h-full object-contain" />
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+          onClick={() => setFloorplanOpen(false)}
+        >
+          <div
+            className="relative max-w-5xl w-[92vw] max-h-[88vh] bg-white rounded-2xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src="/floorplan.jpg"
+              alt="戶型平面圖"
+              className="w-full h-full object-contain"
+            />
           </div>
-          <button onClick={() => setFloorplanOpen(false)} className="absolute top-6 right-8 text-white/70 hover:text-white text-4xl leading-none z-10">×</button>
+          <button
+            onClick={() => setFloorplanOpen(false)}
+            className="absolute top-6 right-8 text-white/70 hover:text-white text-4xl leading-none z-10"
+          >×</button>
         </div>
       )}
 
+      {/* Video Lightbox */}
       {videoOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" onClick={() => setVideoOpen(false)}>
-          <div className="relative w-[90vw] max-w-4xl" style={{ aspectRatio: "16/9" }} onClick={(e) => e.stopPropagation()}>
-            <video src="/vid.mp4" controls autoPlay className="w-full h-full rounded-xl shadow-2xl" />
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+          onClick={() => setVideoOpen(false)}
+        >
+          <div
+            className="relative w-[90vw] max-w-4xl"
+            style={{ aspectRatio: "16/9" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              src="/vid.mp4"
+              controls
+              autoPlay
+              className="w-full h-full rounded-xl shadow-2xl"
+            />
           </div>
-          <button onClick={() => setVideoOpen(false)} className="absolute top-6 right-8 text-white/70 hover:text-white text-4xl leading-none z-10">×</button>
+          <button
+            onClick={() => setVideoOpen(false)}
+            className="absolute top-6 right-8 text-white/70 hover:text-white text-4xl leading-none z-10"
+          >×</button>
         </div>
       )}
     </section>

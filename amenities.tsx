@@ -1,38 +1,41 @@
-import { useEffect, useRef, useState, useCallback } from "react";
-import { useTranslation } from "react-i18next";
+/*
+ * 雲向 CLOUDVIEW — 交通優勢頁 (頁4)
+ */
 
-const getMtrLines = (t: any) => [
+import { useEffect, useRef, useState, useCallback } from "react";
+
+const MTR_LINES = [
   {
     color: "bg-[#0BA3DA]",
     textColor: "text-[#0BA3DA]",
-    name: t('amenities.east_rail.name'),
-    badge: t('amenities.east_rail.badge'),
+    name: "東鐵線",
+    badge: "現役",
     badgeColor: "bg-[#0BA3DA]/20 text-[#0BA3DA]",
     points: [
-      t('amenities.east_rail.p1'),
-      t('amenities.east_rail.p2'),
+      "項目鄰近上水站，一站直達羅湖及落馬洲，一線通往大學、大圍、會展、以至金鐘站。",
+      "瞬間直達多間著名大學，包括香港中文大學、浸會大學、城市大學及理工大學。",
     ],
   },
   {
     color: "bg-[#E2007A]",
     textColor: "text-[#E2007A]",
-    name: t('amenities.north_link.name'),
-    badge: t('amenities.north_link.badge'),
+    name: "北環線",
+    badge: "預計2034年竣工",
     badgeColor: "bg-[#E2007A]/15 text-[#E2007A]",
     points: [
-      t('amenities.north_link.p1'),
-      t('amenities.north_link.p2'),
-      t('amenities.north_link.p3'),
+      "北環線古洞站預計於2027年竣工，主線正進行詳細規劃及設計，並預計在2034年竣工，以配合北部都會區發展。",
+      "支線由擬建新田站出發，途經洲頭以及河套，再接入皇崗口岸。",
+      "東延線將從古洞站為起點延伸至坪輋，途經新界北新市鎮（包括羅湖/文錦渡）的各個發展節點。",
     ],
   },
   {
     color: "bg-[#F5A623]",
     textColor: "text-[#F5A623]",
-    name: t('amenities.ne_new_territories.name'),
-    badge: t('amenities.ne_new_territories.badge'),
+    name: "新界東北線",
+    badge: "規劃中",
     badgeColor: "bg-[#F5A623]/15 text-[#F5A623]",
     points: [
-      t('amenities.ne_new_territories.p1'),
+      "由香園圍途經坪輋等地區連接東鐵線粉嶺站，暢享香園圍口岸及轉乘東鐵線之便利。",
     ],
   },
 ];
@@ -41,7 +44,6 @@ const MIN_SCALE = 1.0;
 const MAX_SCALE = 5.0;
 
 export default function AmenitiesSection() {
-  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [scale, setScale] = useState(1.4);
@@ -57,11 +59,13 @@ export default function AmenitiesSection() {
   };
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
 
+  // Wheel zoom in lightbox
   const onWheel = useCallback((e: React.WheelEvent) => {
     e.preventDefault();
     setScale((s) => Math.min(MAX_SCALE, Math.max(MIN_SCALE, s - e.deltaY * 0.003)));
   }, []);
 
+  // Drag to pan in lightbox
   const onMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
     dragStart.current = { x: e.clientX - lastOffset.current.x, y: e.clientY - lastOffset.current.y };
@@ -95,11 +99,11 @@ export default function AmenitiesSection() {
     return () => observer.disconnect();
   }, []);
 
-  const MTR_LINES = getMtrLines(t);
-
   return (
     <section id="transport" ref={sectionRef} className="bg-sky-gradient min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto px-6 w-full py-20">
+
+        {/* Header */}
         <div className="reveal mb-10">
           <div className="flex items-center gap-4 mb-4">
             <div className="gold-line" />
@@ -108,11 +112,14 @@ export default function AmenitiesSection() {
             </span>
           </div>
           <h2 className="font-display text-[oklch(0.18_0.06_240)] text-4xl md:text-5xl font-light tracking-wide">
-            {t('amenities.title')}
+            三線鐵路瞬動優勢
           </h2>
         </div>
 
+        {/* Two-column layout: text left, map right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+          {/* Left: MTR lines text */}
           <div className="reveal-left space-y-5">
             {MTR_LINES.map((line) => (
               <div key={line.name} className="bg-white/70 backdrop-blur-sm rounded-lg p-5 shadow-sm">
@@ -135,11 +142,12 @@ export default function AmenitiesSection() {
             ))}
           </div>
 
+          {/* Right: MTR Map zoomed in — shifted slightly right */}
           <div className="reveal-right pl-4">
             <button
               onClick={openLightbox}
               className="block w-full cursor-zoom-in group"
-              title={t('amenities.zoom_title')}
+              title="點擊放大查看，可滾輪縮放"
             >
               <div
                 className="w-full overflow-hidden rounded-xl shadow-2xl bg-white relative"
@@ -147,7 +155,7 @@ export default function AmenitiesSection() {
               >
                 <img
                   src="/mtrmap2.webp"
-                  alt={t('amenities.map_alt')}
+                  alt="MTR 路線圖"
                   className="w-full h-full transition-transform duration-300 group-hover:scale-[1.45]"
                   style={{
                     objectFit: "cover",
@@ -157,24 +165,28 @@ export default function AmenitiesSection() {
                   }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/10 rounded-xl">
-                  <span className="bg-black/50 text-white text-xs font-body px-3 py-1.5 rounded-full tracking-wider">{t('amenities.zoom_hint')}</span>
+                  <span className="bg-black/50 text-white text-xs font-body px-3 py-1.5 rounded-full tracking-wider">點擊放大 · 可縮放</span>
                 </div>
               </div>
             </button>
             <p className="font-body text-[oklch(0.55_0.08_230)] text-xs mt-3 tracking-wider text-right">
-              {t('amenities.disclaimer')}
+              * 路線圖僅供參考，詳情以港鐵公司公佈為準
             </p>
           </div>
+
         </div>
 
+        {/* Page Number */}
         <div className="reveal mt-10 flex justify-end">
           <div className="flex items-center gap-4 opacity-40">
             <span className="font-number text-[#2E4166] text-sm tracking-widest leading-none font-medium">04</span>
             <div className="w-12 h-[1px] bg-[#2E4166]" />
           </div>
         </div>
+
       </div>
 
+      {/* Lightbox with zoom + pan */}
       {lightboxOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/85"
@@ -192,7 +204,7 @@ export default function AmenitiesSection() {
           >
             <img
               src="/mtrmap2.webp"
-              alt={t('amenities.map_alt')}
+              alt="MTR 路線圖"
               draggable={false}
               style={{
                 width: "100%",
@@ -204,11 +216,13 @@ export default function AmenitiesSection() {
                 userSelect: "none",
               }}
             />
+            {/* Hint */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white text-xs font-body px-3 py-1.5 rounded-full tracking-wider pointer-events-none">
-              {t('amenities.zoom_control')}
+              滾輪縮放 · 拖動移動
             </div>
           </div>
 
+          {/* Close */}
           <button
             onClick={closeLightbox}
             className="absolute top-6 right-8 text-white/70 hover:text-white text-4xl leading-none z-10"
@@ -216,6 +230,7 @@ export default function AmenitiesSection() {
             ×
           </button>
 
+          {/* Zoom indicator */}
           <div className="absolute bottom-6 right-8 text-white/50 text-xs font-number">
             {Math.round(scale * 100)}%
           </div>
