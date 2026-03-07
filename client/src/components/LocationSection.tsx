@@ -60,29 +60,29 @@ export default function LocationSection() {
     <section
       id="location"
       ref={sectionRef}
-      className="relative min-h-screen flex overflow-hidden bg-[#EEF4F9]"
+      className="relative min-h-screen flex flex-col lg:block overflow-hidden bg-[#EEF4F9]"
     >
-      <div className="absolute inset-y-0 right-0 w-full lg:w-[55%] pr-6 reveal-right flex items-center">
+      <div className="relative lg:absolute lg:inset-y-0 lg:right-0 w-full lg:w-[55%] p-6 lg:p-0 lg:pr-6 reveal-right flex items-center h-[40vh] lg:h-auto order-2 lg:order-none z-0 mt-4 lg:mt-0 mb-10 lg:mb-0">
         <button
           onClick={openLightbox}
-          className="block w-full h-full cursor-zoom-in group"
+          className="block w-full h-full cursor-zoom-in group relative"
           title={t('location.zoom_hint')}
         >
           <img
             src="/mtr-map.webp"
             alt={t('location.map_alt')}
-            className="w-full h-full object-contain object-right"
+            className="w-full h-full object-contain lg:object-right"
           />
           <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#EEF4F9] to-transparent pointer-events-none hidden lg:block" />
-          <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            <span className="bg-black/50 text-white text-xs font-body px-3 py-1.5 rounded-full tracking-wider">
+          <div className="absolute bottom-2 lg:bottom-6 right-2 lg:right-6 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <span className="bg-black/50 text-white text-[10px] lg:text-xs font-body px-2 lg:px-3 py-1 lg:py-1.5 rounded-full tracking-wider">
               {t('location.zoom_control')}
             </span>
           </div>
         </button>
       </div>
 
-      <div className="relative z-10 flex flex-col justify-center w-full lg:w-[44%] min-h-screen px-8 md:px-14 py-20">
+      <div className="relative z-10 flex flex-col justify-center w-full lg:w-[44%] lg:min-h-screen px-6 md:px-14 pt-20 pb-6 lg:py-20 order-1 lg:order-none">
         <div className="reveal mb-8">
           <div className="flex items-center gap-4 mb-5">
             <div className="gold-line" />

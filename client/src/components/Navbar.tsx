@@ -57,14 +57,14 @@ export default function Navbar() {
           >
             <span
               className={`font-english text-2xl font-light tracking-[0.2em] transition-colors duration-300 ${
-                scrolled ? "text-[oklch(0.25_0.08_240)]" : "text-white"
+                scrolled && !mobileOpen ? "text-[oklch(0.25_0.08_240)]" : "text-white"
               }`}
             >
               CLOUDVIEW
             </span>
             <span
               className={`font-display text-sm tracking-[0.4em] transition-colors duration-300 ${
-                scrolled ? "text-[oklch(0.45_0.15_225)]" : "text-white/90"
+                scrolled && !mobileOpen ? "text-[oklch(0.45_0.15_225)]" : "text-white/90"
               }`}
             >
               雲向
@@ -147,15 +147,35 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden transition-colors duration-300 ${
-              scrolled ? "text-[oklch(0.25_0.08_240)]" : "text-white"
-            }`}
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Actions */}
+          <div className="flex lg:hidden items-center gap-5">
+            <button
+              onClick={() => {
+                const langs = ['zh-HK', 'zh-CN', 'en-US'];
+                const currentIdx = langs.indexOf(i18n.language) !== -1 ? langs.indexOf(i18n.language) : 0;
+                const nextLang = langs[(currentIdx + 1) % langs.length];
+                i18n.changeLanguage(nextLang);
+              }}
+              className={`flex items-center justify-center transition-colors duration-300 ${
+                scrolled && !mobileOpen ? "text-[oklch(0.25_0.08_240)]" : "text-white"
+              }`}
+              style={{ width: '40px', height: '40px' }}
+              aria-label="Toggle Language"
+            >
+              <div className="flex items-center gap-1.5 font-body text-sm">
+                <Globe size={18} />
+                <span>{i18n.language === 'en-US' ? 'EN' : i18n.language === 'zh-CN' ? '简' : '繁'}</span>
+              </div>
+            </button>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className={`transition-colors duration-300 ${
+                scrolled && !mobileOpen ? "text-[oklch(0.25_0.08_240)]" : "text-white"
+              }`}
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </nav>
 
