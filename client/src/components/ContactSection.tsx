@@ -18,6 +18,7 @@ export default function ContactSection() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
+    email: "",
     unitType: "",
     message: "",
   });
@@ -119,7 +120,7 @@ export default function ContactSection() {
                     感謝您的登記！我們的專人將盡快與您聯絡，為您提供最新銷售資訊及安排參觀。
                   </p>
                   <button
-                    onClick={() => { setSubmitted(false); setError(null); setForm({ name: "", phone: "", unitType: "", message: "" }); }}
+                    onClick={() => { setSubmitted(false); setError(null); setForm({ name: "", phone: "", email: "", unitType: "", message: "" }); }}
                     className="mt-8 font-body text-[oklch(0.72_0.12_220)] text-xs tracking-widest hover:text-white transition-colors duration-300"
                   >
                     重新登記 →
@@ -167,6 +168,22 @@ export default function ContactSection() {
                         style={{ borderRadius: "2px" }}
                       />
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="font-body text-white/60 text-xs tracking-wider block mb-2">
+                      電郵地址 *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      required
+                      placeholder="請輸入您的電郵地址"
+                      className="w-full bg-white/10 border border-white/20 text-white placeholder-white/30 font-body text-sm px-4 py-3 focus:outline-none focus:border-[oklch(0.72_0.12_220)] transition-colors duration-300"
+                      style={{ borderRadius: "2px" }}
+                    />
                   </div>
 
                   <div>
