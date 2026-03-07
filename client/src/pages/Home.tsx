@@ -13,7 +13,7 @@ import LocationSection from "@/components/LocationSection";
 import SalesSection from "@/components/SalesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-// ...existing code...
+
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
       <SalesSection />
       <ContactSection />
   <Footer />
-// ...existing code...
+
     </div>
   );
 }

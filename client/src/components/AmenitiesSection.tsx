@@ -115,7 +115,7 @@ export default function AmenitiesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <div className="reveal-left space-y-5">
             {MTR_LINES.map((line) => (
-              <div key={line.name} className="bg-white/70 backdrop-blur-sm rounded-lg p-5 shadow-sm">
+              <div key={i} className="bg-white/70 backdrop-blur-sm rounded-lg p-5 shadow-sm">
                 <div className="flex items-center gap-3 mb-3">
                   <div className={`w-3 h-3 rounded-full flex-shrink-0 ${line.color}`} />
                   <h3 className={`font-display text-lg font-medium ${line.textColor}`}>{line.name}</h3>

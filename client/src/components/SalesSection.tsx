@@ -96,7 +96,7 @@ export default function SalesSection() {
                 <tbody>
                   {unitTypes.map((unit, i) => (
                     <tr
-                      key={unit.type}
+                      key={i}
                       className={`border-b border-white/10 hover:bg-white/10 transition-colors duration-200 ${
                         i % 2 === 0 ? "bg-white/5" : "bg-white/10"
                       }`}
@@ -188,7 +188,7 @@ export default function SalesSection() {
                 const Icon = doc.icon;
                 return (
                   <div
-                    key={doc.title}
+                    key={i}
                     className={`bg-white/10 border border-white/15 p-5 transition-all duration-300 ${doc.action ? "hover:bg-white/15 hover:border-[oklch(0.72_0.12_220)] group cursor-pointer" : "opacity-70"}`}
                     style={{ borderRadius: "4px" }}
                     onClick={() => {

@@ -9,7 +9,7 @@ const sharedKeysZhHk = {
   hero: {
     sub_title: "CLOUDVIEW", title: "雲向", slogan: "北部都會區·創科生活新地標", desc: "傲踞北部都會區核心，盡享三線鐵路優勢。\n知名園林大師打造，締造無與倫比的寫意生活空間。",
     total_units: "伙", units_label: "住宅單位", floors: "層", floors_label: "雙頂層會所", height: "米", height_label: "極高特高樓底",
-    book_visit: "預約參觀示範單位", dedicated_service: "專人為你服務", ec: "電子場刊",
+    book_visit: "預約參觀示範單位", dedicated_service: "專人為你服務", ec: "預計關鍵日期：2027年3月31日",
   },
   highlights: {
     title: "項目亮點",
@@ -102,7 +102,7 @@ const sharedKeysZhHk = {
     message: "留言 / 查詢 (選填)", message_ph: "例如：想了解付款計劃、想安排周末參觀...", submitting: "提交中...", submit: "立即提交", privacy: "本人同意接收大鴻輝集團的最新資訊及優惠",
   },
   footer: {
-    disclaimer: "重要聲明：本網頁包含的圖片及資訊僅供參考，並不構成任何要約或承諾。所有銷售詳情以《一手住宅物業銷售條例》及賣方公佈的售樓說明書為準。項目模擬圖為畫家對該發展項目之想像，並非按比例繪製。建議準買家參閱售樓說明書以了解項目詳情。所有資訊以有關政府部門之最後批准為準。"
+    disclaimer: "本頁旨在提供更多一手新盤資料及圖片檔案服務只供閱覽；不聲明或保證所提供訊息的準確性和完整性。在撰寫本頁時，雖已作出合理和謹慎的考慮，對資料的完整和準確性恕不保證、明示或暗示絕對無誤。本頁並不是發展項目之官方網站網頁。本頁內的圖片與發展商的樓盤並無任何關係。準買家如欲了解發展項目詳情，請參閱售樓說明書。資料有可能出現售價、現金或其他條件上的改動，或撤回而不經提前通知，並可能受特別條款約束。因使用此資料而直接或間接引致的損失或損毀。本頁恕不負責。本頁內所有內容包括一手新盤資料，僅供參考和借鑒，物業資料，一切以發展商最新公布為準。本頁面所提到房屋面積如無特別標示，均指實用面積。客戶應自行確保資料或，內容的完整性和準確性。所載資料僅供參考，並不構成要約或合約一部份。如有需要，瀏覽者應自行咨詢相關法律及/或專業意見。"
   },
   cta: { whatsapp_msg: "你好，我對雲向項目有興趣，我想了解更多", whatsapp: "WhatsApp 查詢", aria: "查詢" }
 };
@@ -115,7 +115,7 @@ const sharedKeysZhCn = {
   hero: {
     sub_title: "CLOUDVIEW", title: "云向", slogan: "北部都会区·创科生活新地标", desc: "傲踞北部都会区核心，尽享三线铁路优势。\n知名园林大师打造，缔造无与伦比的写意生活空间。",
     total_units: "伙", units_label: "住宅单位", floors: "层", floors_label: "双顶层会所", height: "米", height_label: "极高特高楼底",
-    book_visit: "预约参观示范单位", dedicated_service: "专人为您服务", ec: "电子场刊",
+    book_visit: "预约参观示范单位", dedicated_service: "专人为您服务", ec: "预计关键日期：2027年3月31日",
   },
   highlights: {
     title: "项目亮点",
@@ -208,7 +208,7 @@ const sharedKeysZhCn = {
     message: "留言 / 查询 (选填)", message_ph: "例如：想了解付款计划、想安排周末参观...", submitting: "提交中...", submit: "立即提交", privacy: "本人同意接收大鸿辉集团的最新信息及优惠",
   },
   footer: {
-    disclaimer: "重要声明：本网页包含的图片及信息仅供参考，并不构成任何要约或承诺。所有销售详情以《一手住宅物业销售条例》及卖方公布的售楼说明书为准。项目模拟图为画家对该发展项目之想象，并非按比例绘制。建议准买家参阅售楼说明书以了解项目详情。所有信息以有关政府部门之最后批准为准。"
+    disclaimer: "本页旨在提供更多一手新盘资料及图片档案服务只供阅览；不声明或保证所提供讯息的准确性和完整性。在撰写本页时，虽已作出合理和谨慎的考虑，对资料的完整和准确性恕不保证、明示或暗示绝对无误。本页并不是发展项目之官方网站网页。本页内的图片与发展商的楼盘并无任何关系。准买家如欲了解发展项目详情，请参阅售楼说明书。资料有可能出现售价、现金或其他条件上的改动，或撤回而不经提前通知，并可能受特别条款约束。因使用此资料而直接或间接引致的损失或损毁。本页恕不负责。本页内所有内容包括一手新盘资料，仅供参考和借鉴，物业资料，一切以发展商最新公布为准。本页面所提到房屋面积如无特别标示，均指实用面积。客户应自行确保资料或，内容的完整性和准确性。所载资料仅供参考，并不构成要约或合约一部份。如有需要，浏览者应自行咨询相关法律及/或专业意见。"
   },
   cta: { whatsapp_msg: "你好，我对云向项目有兴趣，我想了解更多", whatsapp: "WhatsApp 查询", aria: "查询" }
 };
@@ -221,7 +221,7 @@ const sharedKeysEn = {
   hero: {
     sub_title: "CLOUDVIEW", title: "CLOUDVIEW", slogan: "Northern Metropolis · New Tech Living Landmark", desc: "Located in the core of Northern Metropolis, enjoying 3 railway lines.\nCrafted by renowned landscape masters for unparalleled living.",
     total_units: " U", units_label: "Residences", floors: " F", floors_label: "Clubhouse", height: " M", height_label: "Ceiling Height",
-    book_visit: "Book Showflat Visit", dedicated_service: "Dedicated Service", ec: "E-Brochure",
+    book_visit: "Book Showflat Visit", dedicated_service: "Dedicated Service", ec: "Est. Material Date: 31 Mar 2027",
   },
   highlights: {
     title: "Project Highlights",
@@ -314,7 +314,7 @@ const sharedKeysEn = {
     message: "Message / Inquiry (Optional)", message_ph: "e.g., Learn about payment plans, arrange weekend visit...", submitting: "Submitting...", submit: "Submit Now", privacy: "I agree to receive the latest news and offers from Tai Hung Fai Group",
   },
   footer: {
-    disclaimer: "Important Disclaimer: The images and information contained in this website are for reference only and do not constitute any offer or commitment. All sales details are subject to the Residential Properties (First-hand Sales) Ordinance and the sales brochure announced by the vendor. The project simulated images are artist's impressions and are not drawn to scale. Prospective purchasers are advised to refer to the sales brochure for details. All information is subject to the final approval of relevant government departments."
+    disclaimer: "This page is intended to provide more first-hand new property information and image archive services for viewing only; it does not state or guarantee the accuracy and completeness of the information provided. While reasonable and careful consideration has been made in preparing this page, no guarantee, express or implied, is given that the information is complete and absolutely accurate. This page is not the official website of the development project. The images on this page have no relationship with the developer's properties. Prospective purchasers are advised to refer to the sales brochure for details of the development project. Information may be subject to changes in price, cash or other terms, or withdrawal without prior notice, and may be subject to special terms. This page shall not be liable for any loss or damage directly or indirectly arising from the use of this information. All contents on this page, including first-hand new property information, are for reference only. Property information shall be subject to the latest announcements by the developer. Unless otherwise specified, the property areas mentioned on this page refer to saleable areas. Customers should independently verify the completeness and accuracy of the information or contents. The information contained herein is for reference only and does not constitute an offer or part of a contract. If necessary, visitors should seek relevant legal and/or professional advice independently."
   },
   cta: { whatsapp_msg: "Hello, I am interested in the CLOUDVIEW project and would like to know more.", whatsapp: "WhatsApp Inquiry", aria: "Inquiry" }
 };

@@ -76,7 +76,7 @@ export default function HighlightsSection() {
               const Icon = item.icon;
               return (
                 <div
-                  key={item.title}
+                  key={i}
                   className="reveal group"
                   style={{ transitionDelay: `${i * 0.1}s` }}
                 >
