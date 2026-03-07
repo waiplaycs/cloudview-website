@@ -5,7 +5,8 @@
  */
 
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, Globe } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const navItems = [
   { label: "首頁", href: "#home" },
@@ -86,6 +87,31 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={`flex items-center gap-1.5 font-body text-sm tracking-widest transition-colors duration-300 hover:text-[oklch(0.72_0.12_220)] ${
+                    scrolled ? "text-[oklch(0.25_0.08_240)]" : "text-white/90"
+                  }`}
+                  style={{ outline: "none" }}
+                >
+                  <Globe size={16} />
+                  語言
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-white/90 backdrop-blur-md border-white/20 min-w-[120px]">
+                <DropdownMenuItem className="font-body text-sm cursor-pointer focus:bg-[oklch(0.72_0.12_220)]/20">
+                  繁體中文
+                </DropdownMenuItem>
+                <DropdownMenuItem className="font-body text-sm cursor-pointer focus:bg-[oklch(0.72_0.12_220)]/20" onClick={() => alert("簡體中文版本翻譯建置中...")}>
+                  简体中文
+                </DropdownMenuItem>
+                <DropdownMenuItem className="font-body text-sm cursor-pointer focus:bg-[oklch(0.72_0.12_220)]/20" onClick={() => alert("English version is under construction...")}>
+                  English
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <button
               onClick={() => handleNavClick("#contact")}
               className={`font-body text-sm tracking-widest transition-colors duration-300 hover:text-[oklch(0.72_0.12_220)] ${
