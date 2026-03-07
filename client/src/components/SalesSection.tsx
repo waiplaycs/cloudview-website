@@ -138,8 +138,10 @@ export default function SalesSection() {
               </div>
             </div>
 
-            <div className="mt-6">
-              <button
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+              <div>
+                <button
                 onClick={() => setFloorplanOpen(true)}
                 className="w-full group cursor-zoom-in relative overflow-hidden"
                 style={{ borderRadius: "4px" }}
@@ -154,8 +156,30 @@ export default function SalesSection() {
                 </div>
               </button>
               <p className="font-body text-white/40 text-xs mt-2 tracking-wider">{t('sales.floorplan.title')}</p>
+              </div>
+              
+              <div>
+                <button
+                  onClick={() => setVideoOpen(true)}
+                  className="w-full group cursor-pointer relative overflow-hidden bg-black/30 border border-white/15 hover:border-[oklch(0.72_0.12_220)] transition-all duration-300"
+                  style={{ borderRadius: "4px", aspectRatio: "16/9" }}
+                >
+                  <video
+                    src="/vid.mp4"
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-white/20 border-2 border-white/60 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                      <Play size={20} className="text-white ml-1" fill="white" />
+                    </div>
+                  </div>
+                </button>
+                <p className="font-body text-white/40 text-xs mt-2 tracking-wider">{t("sales.video.title")}</p>
+              </div>
             </div>
-
 
           </div>
 
@@ -196,29 +220,7 @@ export default function SalesSection() {
               })}
             </div>
           </div>
-<div className="reveal mt-8 flex justify-end" style={{ transitionDelay: "0.4s" }}>
-              <div className="w-full sm:w-[60%]">
-                <button
-                  onClick={() => setVideoOpen(true)}
-                  className="w-full group cursor-pointer relative overflow-hidden bg-black/30 border border-white/15 hover:border-[oklch(0.72_0.12_220)] transition-all duration-300"
-                  style={{ borderRadius: "4px", aspectRatio: "16/9" }}
-                >
-                  <video
-                    src="/vid.mp4"
-                    muted
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
-                  />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-white/20 border-2 border-white/60 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
-                      <Play size={20} className="text-white ml-1" fill="white" />
-                    </div>
-                    <span className="font-body text-white text-xs tracking-wider">{t("sales.video.title")}</span>
-                  </div>
-                </button>
-              </div>
-            </div>
+
         </div>
 
         <div className="reveal mt-12 flex justify-end">
