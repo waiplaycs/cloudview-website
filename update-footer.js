@@ -1,4 +1,6 @@
-/*
+const fs = require('fs');
+
+const content = `/*
  * 雲向 CLOUDVIEW — 頁腳組件
  * 風格: 深海藍背景，白色文字，法律聲明
  */
@@ -25,3 +27,5 @@ export default function Footer() {
     </footer>
   );
 }
+`;
+fs.writeFileSync('client/src/components/Footer.tsx', content);

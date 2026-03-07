@@ -6,10 +6,12 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const HERO_IMAGE = "/hero-bg.webp";
 
 export default function HeroSection() {
+  const { t } = useTranslation();
   const [loaded, setLoaded] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
@@ -78,7 +80,7 @@ export default function HeroSection() {
             style={{ transitionDelay: "0.1s" }}
           >
             <span className="font-body text-white/80 text-xs tracking-[0.3em] uppercase">
-              北部都會區 · 一手新盤
+              {t("hero.sub_title")}
             </span>
             <div className="gold-line" />
           </div>
@@ -92,7 +94,7 @@ export default function HeroSection() {
           >
             <h1 className="font-display text-white leading-tight mb-2">
               <span className="block text-6xl md:text-7xl lg:text-8xl font-light tracking-wider">
-                雲向
+                {t("hero.title")}
               </span>
               <span className="font-english block text-3xl md:text-4xl font-light tracking-[0.3em] text-white/80 mt-1">
                 CLOUDVIEW
@@ -108,7 +110,7 @@ export default function HeroSection() {
             style={{ transitionDelay: "0.35s" }}
           >
             <p className="font-display text-white/90 text-xl md:text-2xl font-light tracking-widest text-center sm:text-right">
-              雲想天間 · 盡攬未來
+              {t("hero.slogan")}
             </p>
           </div>
 
@@ -120,7 +122,7 @@ export default function HeroSection() {
             style={{ transitionDelay: "0.5s" }}
           >
             <p className="font-body text-white/75 text-base leading-relaxed max-w-xl text-center">
-              全港唯一哥爾夫球場景廣闊綠草公園，北部都會區核心地段，步行約8分鐘達上水站，提供765伙住宅物業，實用面積196至868平方呎。
+              {t("hero.desc")}
             </p>
           </div>
 
@@ -132,9 +134,9 @@ export default function HeroSection() {
             style={{ transitionDelay: "0.65s" }}
           >
             {[
-              { num: "765", unit: "伙", label: "住宅單位" },
-              { num: "38", unit: "層", label: "住宅樓層" },
-              { num: "3.5", unit: "米", label: "特高樓底" },
+              { num: "765", unit: t("hero.total_units"), label: t("hero.units_label") },
+              { num: "38", unit: t("hero.floors"), label: t("hero.floors_label") },
+              { num: "3.5", unit: t("hero.height"), label: t("hero.height_label") },
             ].map((stat) => (
               <div key={stat.label} className="stat-card flex flex-col items-center sm:items-end text-center sm:text-right">
                 <div className="flex items-baseline gap-1">
@@ -163,9 +165,9 @@ export default function HeroSection() {
               style={{ borderRadius: "4px" }}
             >
               <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
-              <span className="font-display text-white text-2xl tracking-[0.2em] relative z-10 font-medium">預約參觀</span>
+              <span className="font-display text-white text-2xl tracking-[0.2em] relative z-10 font-medium">{t("hero.book_visit")}</span>
               <div className="w-px h-8 bg-white/40 relative z-10"></div>
-              <span className="font-body text-white text-base tracking-[0.2em] relative z-10">專人接待</span>
+              <span className="font-body text-white text-base tracking-[0.2em] relative z-10">{t("hero.dedicated_service")}</span>
             </button>
           </div>
         </div>
@@ -191,7 +193,7 @@ export default function HeroSection() {
         style={{ transitionDelay: "1.4s" }}
       >
         <p className="font-body text-white/70 text-base md:text-lg font-medium tracking-[0.15em] drop-shadow-md">
-          預計關鍵日期為2027年3月31日
+          {t("hero.ec")}
         </p>
       </div>
 
