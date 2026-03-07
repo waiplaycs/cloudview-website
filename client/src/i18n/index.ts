@@ -99,7 +99,7 @@ const sharedKeysZhHk = {
     re_register: "重新登記", form_title: "預約參觀 / 索取資料", form_subtitle: "請填寫您的基本資料",
     name: "姓名", name_ph: "請填寫您的姓名", phone: "聯絡電話", phone_ph: "請填寫您的電話號碼", email: "電郵地址", email_ph: "請填寫您的電郵地址",
     unit: "感興趣的戶型", unit_ph: "選擇戶型 (可選)", unit_studio: "開放式 (約196-220呎)", unit_1br: "1房 (約292-445呎)", unit_2br: "2房 (約445-620呎)", unit_3br: "3房 (約620-868呎)",
-    message: "留言 / 查詢 (選填)", message_ph: "例如：想了解付款計劃、想安排周末參觀...", submitting: "提交中...", submit: "立即提交", privacy: "本人同意接收大鴻輝集團的最新資訊及優惠",
+    message: "留言 / 查詢 (選填)", message_ph: "例如：想了解付款計劃、想安排周末參觀...", submitting: "提交中...", submit: "立即提交", privacy: "本人同意提供個人資料僅作本次查詢及聯絡用途",
   },
   footer: {
     disclaimer: "本頁旨在提供更多一手新盤資料及圖片檔案服務只供閱覽；不聲明或保證所提供訊息的準確性和完整性。在撰寫本頁時，雖已作出合理和謹慎的考慮，對資料的完整和準確性恕不保證、明示或暗示絕對無誤。本頁並不是發展項目之官方網站網頁。本頁內的圖片與發展商的樓盤並無任何關係。準買家如欲了解發展項目詳情，請參閱售樓說明書。資料有可能出現售價、現金或其他條件上的改動，或撤回而不經提前通知，並可能受特別條款約束。因使用此資料而直接或間接引致的損失或損毀。本頁恕不負責。本頁內所有內容包括一手新盤資料，僅供參考和借鑒，物業資料，一切以發展商最新公布為準。本頁面所提到房屋面積如無特別標示，均指實用面積。客戶應自行確保資料或，內容的完整性和準確性。所載資料僅供參考，並不構成要約或合約一部份。如有需要，瀏覽者應自行咨詢相關法律及/或專業意見。"
@@ -205,7 +205,7 @@ const sharedKeysZhCn = {
     re_register: "重新登记", form_title: "预约参观 / 索取资料", form_subtitle: "请填写您的基本资料",
     name: "姓名", name_ph: "请填写您的姓名", phone: "联系电话", phone_ph: "请填写您的电话号码", email: "电邮地址", email_ph: "请填写您的电邮地址",
     unit: "感兴趣的户型", unit_ph: "选择户型 (可选)", unit_studio: "开放式 (约196-220呎)", unit_1br: "1房 (约292-445呎)", unit_2br: "2房 (约445-620呎)", unit_3br: "3房 (约620-868呎)",
-    message: "留言 / 查询 (选填)", message_ph: "例如：想了解付款计划、想安排周末参观...", submitting: "提交中...", submit: "立即提交", privacy: "本人同意接收大鸿辉集团的最新信息及优惠",
+    message: "留言 / 查询 (选填)", message_ph: "例如：想了解付款计划、想安排周末参观...", submitting: "提交中...", submit: "立即提交", privacy: "本人同意提供个人资料仅作本次查询及联络用途",
   },
   footer: {
     disclaimer: "本页旨在提供更多一手新盘资料及图片档案服务只供阅览；不声明或保证所提供讯息的准确性和完整性。在撰写本页时，虽已作出合理和谨慎的考虑，对资料的完整和准确性恕不保证、明示或暗示绝对无误。本页并不是发展项目之官方网站网页。本页内的图片与发展商的楼盘并无任何关系。准买家如欲了解发展项目详情，请参阅售楼说明书。资料有可能出现售价、现金或其他条件上的改动，或撤回而不经提前通知，并可能受特别条款约束。因使用此资料而直接或间接引致的损失或损毁。本页恕不负责。本页内所有内容包括一手新盘资料，仅供参考和借鉴，物业资料，一切以发展商最新公布为准。本页面所提到房屋面积如无特别标示，均指实用面积。客户应自行确保资料或，内容的完整性和准确性。所载资料仅供参考，并不构成要约或合约一部份。如有需要，浏览者应自行咨询相关法律及/或专业意见。"
@@ -311,7 +311,7 @@ const sharedKeysEn = {
     re_register: "Register Again", form_title: "Book Visit / Get Info", form_subtitle: "Please provide your basic details",
     name: "Name", name_ph: "Enter your name", phone: "Phone Number", phone_ph: "Enter your phone number", email: "Email Address", email_ph: "Enter your email address",
     unit: "Interested Unit Type", unit_ph: "Select Type (Optional)", unit_studio: "Studio (196-220 sq.ft)", unit_1br: "1-Bedroom (292-445 sq.ft)", unit_2br: "2-Bedroom (445-620 sq.ft)", unit_3br: "3-Bedroom (620-868 sq.ft)",
-    message: "Message / Inquiry (Optional)", message_ph: "e.g., Learn about payment plans, arrange weekend visit...", submitting: "Submitting...", submit: "Submit Now", privacy: "I agree to receive the latest news and offers from Tai Hung Fai Group",
+    message: "Message / Inquiry (Optional)", message_ph: "e.g., Learn about payment plans, arrange weekend visit...", submitting: "Submitting...", submit: "Submit Now", privacy: "I agree to provide my personal information solely for the purpose of this inquiry and contact",
   },
   footer: {
     disclaimer: "This page is intended to provide more first-hand new property information and image archive services for viewing only; it does not state or guarantee the accuracy and completeness of the information provided. While reasonable and careful consideration has been made in preparing this page, no guarantee, express or implied, is given that the information is complete and absolutely accurate. This page is not the official website of the development project. The images on this page have no relationship with the developer's properties. Prospective purchasers are advised to refer to the sales brochure for details of the development project. Information may be subject to changes in price, cash or other terms, or withdrawal without prior notice, and may be subject to special terms. This page shall not be liable for any loss or damage directly or indirectly arising from the use of this information. All contents on this page, including first-hand new property information, are for reference only. Property information shall be subject to the latest announcements by the developer. Unless otherwise specified, the property areas mentioned on this page refer to saleable areas. Customers should independently verify the completeness and accuracy of the information or contents. The information contained herein is for reference only and does not constitute an offer or part of a contract. If necessary, visitors should seek relevant legal and/or professional advice independently."
