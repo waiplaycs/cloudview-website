@@ -196,6 +196,29 @@ export default function SalesSection() {
               })}
             </div>
           </div>
+<div className="reveal mt-8 flex justify-end" style={{ transitionDelay: "0.4s" }}>
+              <div className="w-full sm:w-[60%]">
+                <button
+                  onClick={() => setVideoOpen(true)}
+                  className="w-full group cursor-pointer relative overflow-hidden bg-black/30 border border-white/15 hover:border-[oklch(0.72_0.12_220)] transition-all duration-300"
+                  style={{ borderRadius: "4px", aspectRatio: "16/9" }}
+                >
+                  <video
+                    src="/vid.mp4"
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-white/20 border-2 border-white/60 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                      <Play size={20} className="text-white ml-1" fill="white" />
+                    </div>
+                    <span className="font-body text-white text-xs tracking-wider">{t("sales.video.title")}</span>
+                  </div>
+                </button>
+              </div>
+            </div>
         </div>
 
         <div className="reveal mt-12 flex justify-end">
@@ -206,27 +229,7 @@ export default function SalesSection() {
         </div>
       </div>
 
-            <div className="reveal mt-8" style={{ transitionDelay: "0.4s" }}>
-              <button
-                onClick={() => setVideoOpen(true)}
-                className="w-full group cursor-pointer relative overflow-hidden bg-black/30 border border-white/15 hover:border-[oklch(0.72_0.12_220)] transition-all duration-300"
-                style={{ borderRadius: "4px", aspectRatio: "16/9" }}
-              >
-                <video
-                  src="/vid.mp4"
-                  muted
-                  playsInline
-                  preload="metadata"
-                  className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
-                />
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                  <div className="w-14 h-14 rounded-full bg-white/20 border-2 border-white/60 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
-                    <Play size={22} className="text-white ml-1" fill="white" />
-                  </div>
-                  <span className="font-body text-white text-sm tracking-wider">{t('sales.video.title')}</span>
-                </div>
-              </button>
-            </div>
+            
 
       {lightboxOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" onClick={() => setLightboxOpen(false)}>
