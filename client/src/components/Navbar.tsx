@@ -130,12 +130,12 @@ export default function Navbar() {
               href="https://www.instagram.com/wingtai_living/?locale=zh_hk"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center justify-center transition-opacity duration-300 hover:opacity-80 ${
-                scrolled ? "opacity-90" : "opacity-100"
+              className={`flex items-center justify-center transition-colors duration-300 hover:text-[oklch(0.72_0.12_220)] ${
+                scrolled ? "text-[oklch(0.25_0.08_240)]" : "text-white/90"
               }`}
               aria-label="Instagram"
             >
-              <img src="/ins2.png" alt="Instagram" className={`w-5 h-5 ${scrolled ? '' : 'brightness-0 invert'}`} />
+              <Instagram size={20} />
             </a>
             <button
               onClick={() => window.open(`https://wa.me/85212345678?text=${t('cta.whatsapp_msg')}`, '_blank')}
@@ -186,10 +186,10 @@ export default function Navbar() {
               href="https://www.instagram.com/wingtai_living/?locale=zh_hk"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/90 hover:opacity-80 transition-opacity duration-300"
+              className="text-white/90 hover:text-[oklch(0.72_0.12_220)] transition-colors duration-300"
               aria-label="Instagram"
             >
-              <img src="/ins2.png" alt="Instagram" className="w-6 h-6 brightness-0 invert" />
+              <Instagram size={24} />
             </a>
             <button
               onClick={() => {
