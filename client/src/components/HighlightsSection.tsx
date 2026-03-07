@@ -113,10 +113,10 @@ export default function HighlightsSection() {
         ))}
 
         <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.15_0.08_240/0.7)] to-transparent" />
-        <button onClick={prevImage} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-black/20 hover:bg-black/40 text-white rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <button onClick={prevImage} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-black/30 md:bg-black/20 hover:bg-black/50 md:hover:bg-black/40 text-white rounded-full backdrop-blur-sm opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-300">
           <ChevronLeft />
         </button>
-        <button onClick={nextImage} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-black/20 hover:bg-black/40 text-white rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <button onClick={nextImage} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-black/30 md:bg-black/20 hover:bg-black/50 md:hover:bg-black/40 text-white rounded-full backdrop-blur-sm opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-300">
           <ChevronRight />
         </button>
 
