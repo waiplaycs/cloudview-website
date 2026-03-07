@@ -184,7 +184,7 @@ export default function SalesSection() {
               {t('sales.docs.title')}
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {salesDocs.map((doc) => {
+              {salesDocs.map((doc, i) => {
                 const Icon = doc.icon;
                 return (
                   <div

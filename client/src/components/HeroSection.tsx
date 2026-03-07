@@ -137,7 +137,7 @@ export default function HeroSection() {
               { num: "765", unit: t("hero.total_units"), label: t("hero.units_label") },
               { num: "38", unit: t("hero.floors"), label: t("hero.floors_label") },
               { num: "3.5", unit: t("hero.height"), label: t("hero.height_label") },
-            ].map((stat) => (
+            ].map((stat, i) => (
               <div key={i} className="stat-card flex flex-col items-center sm:items-end text-center sm:text-right">
                 <div className="flex items-baseline gap-1">
                   <span className="font-number text-white text-3xl font-medium">
