@@ -7,19 +7,21 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, MessageCircle, Globe } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-
-const navItems = [
-  { label: "首頁", href: "#home" },
-  { label: "項目亮點", href: "#highlights" },
-  { label: "景觀設計", href: "#enzo-enea" },
-  { label: "交通優勢", href: "#amenities" },
-  { label: "創科新城", href: "#location" },
-  { label: "售樓資訊", href: "#sales" },
-  { label: "聯絡我們", href: "#contact" },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
+
+  const navItems = [
+    { label: t("nav.home"), href: "#home" },
+    { label: t("nav.highlights"), href: "#highlights" },
+    { label: t("nav.landscape"), href: "#enzo-enea" },
+    { label: t("nav.transport"), href: "#amenities" },
+    { label: t("nav.innovation"), href: "#location" },
+    { label: t("nav.sales"), href: "#sales" },
+    { label: t("nav.contact"), href: "#contact" },
+  ];
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
@@ -96,17 +98,17 @@ export default function Navbar() {
                   style={{ outline: "none" }}
                 >
                   <Globe size={16} />
-                  語言
+                  {t("nav.language")}
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-white/90 backdrop-blur-md border-white/20 min-w-[120px]">
-                <DropdownMenuItem className="font-body text-sm cursor-pointer focus:bg-[oklch(0.72_0.12_220)]/20">
+                <DropdownMenuItem className="font-body text-sm cursor-pointer focus:bg-[oklch(0.72_0.12_220)]/20" onClick={() => i18n.changeLanguage('zh-HK')}>
                   繁體中文
                 </DropdownMenuItem>
-                <DropdownMenuItem className="font-body text-sm cursor-pointer focus:bg-[oklch(0.72_0.12_220)]/20" onClick={() => alert("簡體中文版本翻譯建置中...")}>
+                <DropdownMenuItem className="font-body text-sm cursor-pointer focus:bg-[oklch(0.72_0.12_220)]/20" onClick={() => i18n.changeLanguage('zh-CN')}>
                   简体中文
                 </DropdownMenuItem>
-                <DropdownMenuItem className="font-body text-sm cursor-pointer focus:bg-[oklch(0.72_0.12_220)]/20" onClick={() => alert("English version is under construction...")}>
+                <DropdownMenuItem className="font-body text-sm cursor-pointer focus:bg-[oklch(0.72_0.12_220)]/20" onClick={() => i18n.changeLanguage('en-US')}>
                   English
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -118,7 +120,7 @@ export default function Navbar() {
                 scrolled ? "text-[oklch(0.25_0.08_240)]" : "text-white/90"
               }`}
             >
-              索取最新資訊
+              {t("nav.get_info")}
             </button>
             <button
               onClick={() => window.open('https://wa.me/85212345678?text=你好，我對雲向項目有興趣，我想了解更多', '_blank')}
@@ -126,7 +128,7 @@ export default function Navbar() {
               style={{ borderRadius: "2px" }}
             >
               <MessageCircle size={16} className="text-white" />
-              WhatsApp 查詢
+              {t("nav.whatsapp")}
             </button>
           </div>
 
@@ -169,7 +171,7 @@ export default function Navbar() {
             style={{ borderRadius: "2px" }}
           >
             <MessageCircle size={18} className="text-white" />
-            WhatsApp 查詢
+            {t("nav.whatsapp")}
           </button>
         </div>
       </div>
