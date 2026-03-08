@@ -138,7 +138,7 @@ export default function Navbar() {
               {t("nav.get_info")}
             </button>
             <button
-              onClick={() => window.open(`https://wa.me/85212345678?text=${t('cta.whatsapp_msg')}`, '_blank')}
+              onClick={() => window.open(`https://wa.me/85293185118?text=${t('cta.whatsapp_msg')}`, '_blank')}
               className="btn-primary text-sm tracking-widest flex items-center gap-2"
               style={{ borderRadius: "2px" }}
             >
@@ -213,7 +213,7 @@ export default function Navbar() {
             </a>
             <button
               onClick={() => {
-                window.open(`https://wa.me/85212345678?text=${t('cta.whatsapp_msg')}`, '_blank');
+                window.open(`https://wa.me/85293185118?text=${t('cta.whatsapp_msg')}`, '_blank');
                 setMobileOpen(false);
               }}
               className="btn-primary text-base tracking-widest flex items-center gap-2"

@@ -26,7 +26,7 @@ export default function FloatingCTA() {
         <div className="flex flex-col items-end gap-2 animate-fade-up">
           <button
             onClick={() => {
-              window.open(`https://wa.me/85212345678?text=${t('cta.whatsapp_msg')}`, '_blank');
+              window.open(`https://wa.me/85293185118?text=${t('cta.whatsapp_msg')}`, '_blank');
               setExpanded(false);
             }}
             className="flex items-center gap-3 bg-white shadow-xl px-5 py-3 text-[oklch(0.25_0.08_240)] hover:bg-[oklch(0.93_0.05_220)] transition-all duration-300"
@@ -36,12 +36,12 @@ export default function FloatingCTA() {
             <span className="font-body text-sm tracking-wider">{t('cta.whatsapp')}</span>
           </button>
           <a
-            href="tel:+85212345678"
+            href="tel:+85293185118"
             className="flex items-center gap-3 bg-white shadow-xl px-5 py-3 text-[oklch(0.25_0.08_240)] hover:bg-[oklch(0.93_0.05_220)] transition-all duration-300"
             style={{ borderRadius: "2px" }}
           >
             <Phone size={16} className="text-[oklch(0.45_0.15_225)]" />
-            <span className="font-body text-sm tracking-wider">2345 6789</span>
+            <span className="font-body text-sm tracking-wider">9318 5118</span>
           </a>
         </div>
       )}
