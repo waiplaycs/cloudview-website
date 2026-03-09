@@ -17,7 +17,7 @@ const apartmentComplexSchema = {
   "@context": "https://schema.org",
   "@type": "ApartmentComplex",
   "name": "雲向 CLOUDVIEW",
-  "description": "北部都會區創科生活新地標，毗鄰170公頃粉嶺高爾夫球場，享受2.8萬呎度假式會所與園林。",
+  "description": "北都矚目府邸CLOUDVIEW 雲向，前臨粉嶺高爾夫球場，盡享開揚高球場景觀。項目盡享東鐵線便利，一線貫通深圳與港島兩大經濟核心，更直達多間著名大學，擁北部雙城生活圈 ...",
   "url": "https://hk-cloudview.com/",
   "address": {
     "@type": "PostalAddress",
@@ -95,7 +95,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Helmet>
         <title>雲向 CLOUDVIEW | 北都優越地段 盛綠園林會所</title>
-        <meta name="description" content="雲向 CLOUDVIEW — 香港北部都會區一手新盤，毗鄰粉嶺高爾夫球場，提供一房至三房單位，實用面積196至868平方呎。" />
+        <meta name="description" content="北都矚目府邸CLOUDVIEW 雲向，前臨粉嶺高爾夫球場，盡享開揚高球場景觀。項目盡享東鐵線便利，一線貫通深圳與港島兩大經濟核心，更直達多間著名大學，擁北部雙城生活圈 ..." />
         {/* Keywords for Generative Engine Optimization */}
         <meta name="keywords" content="雲向, CLOUDVIEW, 北部都會區新盤, 粉嶺新樓, 上水站新樓盤, Enzo Enea 園林, 粉嶺高爾夫球場景觀, 香港大灣區房地產, 香港一房新盤, 雲向價單" />
         
