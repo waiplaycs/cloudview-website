@@ -7,6 +7,7 @@
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { reportConversion } from "../lib/analytics";
 
 const HERO_IMAGE = "/hero-bg.webp";
 
@@ -160,7 +161,10 @@ export default function HeroSection() {
             style={{ transitionDelay: "0.8s" }}
           >
             <button
-              onClick={() => window.open(`https://wa.me/85293185118?text=${t('cta.whatsapp_msg')}`, '_blank')}
+              onClick={() => {
+                reportConversion();
+                window.open(`https://wa.me/85293185118?text=${t('cta.whatsapp_msg')}`, '_blank');
+              }}
               className="group relative inline-flex items-center gap-6 bg-gradient-to-r from-[oklch(0.65_0.12_220)] to-[oklch(0.55_0.12_230)] hover:from-[oklch(0.70_0.12_220)] hover:to-[oklch(0.60_0.12_230)] px-10 py-5 transition-all duration-300 overflow-hidden shadow-lg shadow-[oklch(0.65_0.12_220)]/30 border border-white/10 cursor-pointer"
               style={{ borderRadius: "4px" }}
             >

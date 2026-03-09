@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { MessageCircle, Phone, X } from "lucide-react";
+import { reportConversion } from "../lib/analytics";
 
 export default function FloatingCTA() {
   const { t } = useTranslation();
@@ -26,6 +27,7 @@ export default function FloatingCTA() {
         <div className="flex flex-col items-end gap-2 animate-fade-up">
           <button
             onClick={() => {
+              reportConversion();
               window.open(`https://wa.me/85293185118?text=${t('cta.whatsapp_msg')}`, '_blank');
               setExpanded(false);
             }}

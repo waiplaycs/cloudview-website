@@ -8,6 +8,7 @@ import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
 import Footer from "@/components/Footer";
+import { reportConversion } from "../lib/analytics";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663390670563/Ze3u637JsALmM5sdedd6MJ/cloudview_hero-knk3x8KoJbCBEju3oUt9HR.webp";
 
@@ -64,6 +65,7 @@ export default function ContactSection() {
         publicKey
       );
 
+      reportConversion();
       setSubmitted(true);
     } catch (err: any) {
       console.error(err);
